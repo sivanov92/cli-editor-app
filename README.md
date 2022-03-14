@@ -29,6 +29,11 @@ php editor -i 's/w/world2/' testfile.txt - test command
 
 # The flags each have their own callables in the repository to handle the extra functionality
 
+# Adding functionality
+When adding new commands and actions, start with the CommandsRepository adding your command or flag in the array, following the structure
+After that update the CommandActionsRepository creating the action callback for your new command or flag
+
+
 # Tests
 
 Run the tests with
@@ -38,5 +43,5 @@ Run the tests with
 
 Note that this command is for Windows , for Ubuntu it may look like this
 ```bash
- vendor\bin\phpunit tests
+ vendor/bin/phpunit tests
 ```
