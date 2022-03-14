@@ -1,0 +1,12 @@
+<?php 
+
+if (php_sapi_name() !== 'cli') {
+    exit;
+}
+
+require __DIR__ . '/vendor/autoload.php';
+
+use App\EditorController;
+
+$editor = EditorController::getInstance();
+$editor->handleCommands($argc, $argv);
