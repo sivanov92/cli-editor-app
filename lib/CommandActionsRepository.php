@@ -22,7 +22,6 @@ class CommandActionsRepository extends CommandActionHelper
          !isset($options['otherArguments']) ||
          count($options['otherArguments']) === 0) {
              throw new \InvalidArgumentException("The options passed to the substitute method are missing or invalid !");
-             return false;
         }
         
         $fileName = $options['otherArguments'][0];
@@ -60,7 +59,6 @@ class CommandActionsRepository extends CommandActionHelper
          !isset($options['otherArguments']) ||
          count($options['otherArguments']) === 0) {
             throw new \InvalidArgumentException("The options passed to the substitute method are missing or invalid !");
-             return false;
         }
         
         $fileName = $options['otherArguments'][0];

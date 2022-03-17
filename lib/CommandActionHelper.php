@@ -15,8 +15,7 @@ class CommandActionHelper
     protected static function getFileContent(string $fileName): ?string
     {
         if (!file_exists($fileName)) {
-           throw new \Exception("File ".$fileName." does not exist!");
-           return null;
+           throw new \Exception(sprintf("File %s does not exist!", $fileName));
         }
         
         return file_get_contents($fileName);
@@ -30,15 +29,13 @@ class CommandActionHelper
     protected static function updateFileContent(string $fileName, string $newContent): bool
     {
         if (!file_exists($fileName)) {
-            throw new \Exception("File ".$fileName." does not exist!");
-            return null;
+            throw new \Exception(sprintf("File %s does not exist!", $fileName));
         }
 
         $fileUpdated = file_put_contents($fileName, $newContent);
 
         if (!$fileUpdated) {
-            throw new \Exception("File ".$fileName." could not be updated due to error!");
-            return false;
+            throw new \Exception(sprintf("File %s could not be updated due to error!", $fileName));
         }
 
         return true;

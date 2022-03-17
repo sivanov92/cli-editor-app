@@ -33,8 +33,7 @@ final class CommandActionsRepositoryTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
 
-        $stringTest =  CommandActionsRepository::substituteStringOutput($this->substituteStringMissingOptionsDataProvider);
-        $this->assertFalse($stringTest);
+        CommandActionsRepository::substituteStringOutput($this->substituteStringMissingOptionsDataProvider);
     }
 
     /**
@@ -48,8 +47,7 @@ final class CommandActionsRepositoryTest extends TestCase
              "testfilebad.txt"
         ];
 
-        $stringTest =  CommandActionsRepository::substituteStringOutput($this->substituteStringBadFileDirDataProvider);
-        $this->assertFalse($stringTest);
+        CommandActionsRepository::substituteStringOutput($this->substituteStringBadFileDirDataProvider);
     }
 
     /**
